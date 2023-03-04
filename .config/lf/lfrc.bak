@@ -1,0 +1,9 @@
+set previewer ~/.config/lf/pv
+set cleaner ~/.config/lf/cls
+
+# define a custom 'open' command
+cmd open $$OPENER $fx
+cmd open-choose $OPENER_CHOOSE="true" $OPENER $fx
+# dedicated keys for file opener actions
+map o open
+map O open-choose
