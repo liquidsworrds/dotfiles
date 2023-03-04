@@ -1,0 +1,6 @@
+#!/bin/sh
+
+brightnum=$(xbacklight -get)
+brightness=$(printf "${brightnum%.*}")
+
+echo "$brightness"

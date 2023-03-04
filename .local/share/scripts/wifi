@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ssid=$(nmcli device wifi list | sed -n '1!p' | cut -b 9- | cut -d' ' -f2 | dmenu -p "Available Networks: " -l 5) pass=$(echo "" | dmenu -p "Enter the password: ")
+
+nmcli device wifi connect $ssid password $pass
+
+
+
+

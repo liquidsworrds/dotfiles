@@ -1,0 +1,30 @@
+#!/bin/sh
+
+keymap() {
+  #Touchpad tap to click
+  xinput set-prop 14 280 1
+  
+  #Cursor speed
+  #xset r rate 300 50
+  #Swap Esc and Caps
+  #setxkbmap -option caps:swapescape
+  
+  #Menu button as right super
+  xmodmap -e 'keycode 135 = Super_R'
+}
+
+switch_display() {
+  DISP=$(xrandr -q | grep -o "VGA-1 connected")
+  VGA="VGA-1 connected"
+  
+  [ "$DISP" == "$VGA" ] && xrandr --output VGA-1 --auto && xrandr --output LVDS-1 --off || xrandr --output LVDS-1 --auto
+}
+
+
+
+#switch_display
+#keymap
+
+dwmblocks&
+sleep 1
+redshift -P -O 5000 2>/dev/null

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+wall=$(find $HOME/pics/walls/ -name $1.jpg)
+feh --bg-fill $wall
+wal -i $wall >/dev/null
+sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+cd /opt/dwm/ && sudo make clean install >/dev/null
+echo "Done..."
+
+

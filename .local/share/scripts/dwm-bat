@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bat=$(acpi | grep -o [[:digit:]]*%)
+echo "  $bat"

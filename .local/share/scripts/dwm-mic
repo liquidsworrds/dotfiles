@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mic=$(pamixer --source 0 --get-volume)
+mic_mute=$(pamixer --source 0 --get-mute)
+
+if [ "$mic_mute" == "true" ]; then
+	echo " "
+else 
+	echo "  $mic%"
+fi	

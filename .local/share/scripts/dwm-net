@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed "s/up/  /;s/down//" /sys/class/net/e*/operstate
+
+sed "s/up/  /;s/down//" /sys/class/net/w*/operstate
+
