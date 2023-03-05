@@ -17,7 +17,7 @@ super + p
 	spotify
 
 super + r
-	st -e lf
+	st -e lfrun
 
 super + ctrl + x 
 	prompt "Are you sure you want to shutdown?" "sudo poweroff"
