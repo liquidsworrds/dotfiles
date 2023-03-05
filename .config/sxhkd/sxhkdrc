@@ -1,0 +1,44 @@
+super + Escape
+	"$XDG_CONFIG_HOME"/sxhkd/functions
+
+super + Return
+	st
+
+super + w
+	librewolf
+
+super + d 
+	dmenu_run
+
+super + shift + p
+	st -e cmus
+
+super + p
+	spotify
+
+super + r
+	st -e lf
+
+super + ctrl + x 
+	prompt "Are you sure you want to shutdown?" "sudo poweroff"
+
+super + ctrl + r 
+	prompt "Are you sure you want to reboot?" "sudo reboot"
+
+super + Print
+	scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
+
+super + F1
+	st -e pulsemixer
+
+super + F12
+	pamixer --get-default-sink -i 5
+
+super + F11
+	pamixer default-sink -d 5
+
+super + shift + F11
+	pamixer default-sink -t
+
+super + F8
+	wifi
