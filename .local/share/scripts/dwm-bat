@@ -1,4 +1,7 @@
 #!/bin/sh
 
 bat=$(acpi | grep -o [[:digit:]]*%)
-echo "  $bat"
+chr=$(acpi | grep -o "Charging")
+
+[ "$chr" == "Charging" ] && echo "  $bat" || echo "   $bat"
+

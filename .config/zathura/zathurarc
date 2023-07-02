@@ -1,3 +1,6 @@
 include theme.color
 
 set selection-clipboard "clipboard"
+set font 'monospace normal 14'
+
+map <C-b> focus_inputbar ":bmark"

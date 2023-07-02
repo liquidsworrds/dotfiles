@@ -2,7 +2,7 @@ super + Escape
 	"$XDG_CONFIG_HOME"/sxhkd/functions
 
 super + Return
-	st
+	alacritty
 
 super + w
 	librewolf
@@ -16,8 +16,11 @@ super + shift + p
 super + p
 	spotify
 
+super + s 
+    signal-desktop&
+
 super + r
-	st -e lfrun
+	st -e /usr/bin/lfrun
 
 super + ctrl + x 
 	prompt "Are you sure you want to shutdown?" "sudo poweroff"
@@ -26,19 +29,26 @@ super + ctrl + r
 	prompt "Are you sure you want to reboot?" "sudo reboot"
 
 super + Print
-	scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
+    flameshot gui
+	;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
 
-super + F1
+super + shift + F1
 	st -e pulsemixer
 
-super + F12
-	pamixer --get-default-sink -i 5
+super + F3
+	pamixer default-sink -i 5
 
-super + F11
+super + F2
 	pamixer default-sink -d 5
 
-super + shift + F11
+super + F1
 	pamixer default-sink -t
 
 super + F8
 	wifi
+
+super + F6
+    sudo xbacklight -inc 5
+
+super + F5
+    sudo xbacklight -dec 5
