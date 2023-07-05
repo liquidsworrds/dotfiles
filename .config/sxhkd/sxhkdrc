@@ -23,10 +23,10 @@ super + r
 	st -e /usr/bin/lfrun
 
 super + ctrl + x 
-	prompt "Are you sure you want to shutdown?" "sudo poweroff"
+	dwm-prompt "Are you sure you want to shutdown?" "sudo poweroff"
 
 super + ctrl + r 
-	prompt "Are you sure you want to reboot?" "sudo reboot"
+	dwm-prompt "Are you sure you want to reboot?" "sudo reboot"
 
 super + Print
     flameshot gui
