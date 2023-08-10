@@ -23,10 +23,10 @@ super + r
 	st -e /usr/bin/lfrun
 
 super + ctrl + x 
-	dwm-prompt "Are you sure you want to shutdown?" "sudo poweroff"
+	dwm-prompt "Are you sure you want to shutdown?" "shutdown now"
 
 super + ctrl + r 
-	dwm-prompt "Are you sure you want to reboot?" "sudo reboot"
+	dwm-prompt "Are you sure you want to reboot?" "reboot"
 
 super + Print
     flameshot gui
@@ -45,7 +45,7 @@ super + F1
 	pamixer default-sink -t
 
 super + F8
-	wifi
+	wifi toggle >/dev/null
 
 super + F6
     sudo xbacklight -inc 5

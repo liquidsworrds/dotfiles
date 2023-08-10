@@ -13,14 +13,14 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  require("rose-pine").setup()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+-- use({
+--     'rose-pine/neovim',
+--     as = 'rose-pine',
+--     config = function()
+--   	  require("rose-pine").setup()
+--  	  vim.cmd('colorscheme rose-pine')
+--     end
+-- })
 
   use {
       'VonHeikemen/lsp-zero.nvim',
@@ -46,24 +46,29 @@ return require('packer').startup(function(use)
   }
 
   use {
-    "nvim-neorg/neorg",
-    config = function()
-        require('neorg').setup {
-            load = {
-                ["core.defaults"] = {}, -- Loads default behaviour
-                ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-                ["core.norg.dirman"] = { -- Manages Neorg workspaces
+      "nvim-neorg/neorg",
+      config = function()
+          require('neorg').setup {
+              load = {
+                  ["core.defaults"] = {}, -- Loads default behaviour
+                  ["core.concealer"] = {
                     config = {
-                        workspaces = {
-                            notes = "~/notes",
-                        },
-                    },
-                },
-            },
-        }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim",
+                      icon_preset = "diamond"
+                    }
+                  }, -- Adds pretty icons to your documents
+                  ["core.dirman"] = { -- Manages Neorg workspaces
+                      config = {
+                          workspaces = {
+                              notes = "~/notes",
+                          },
+                          default_workspace = "notes",
+                      },
+                  },
+              },
+          }
+      end,
+      run = ":Neorg sync-parsers",
+      requires = "nvim-lua/plenary.nvim",
   }
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -72,5 +77,19 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('brenoprata10/nvim-highlight-colors')
+  use('preservim/nerdtree')
+  use('ryanoasis/vim-devicons')
+  use('vim-airline/vim-airline')
+  use('vim-airline/vim-airline-themes')
+ -- use({'ellisonleao/gruvbox.nvim',
+ --   as = 'gruvbox',
+ --   config = function() 
+ --       require("gruvbox").setup()
+ --       vim.cmd('colorscheme gruvbox')
+ --       end
+ -- })
+
+  use {'rebelot/kanagawa.nvim'}
+
 
 end)

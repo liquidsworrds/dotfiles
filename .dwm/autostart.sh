@@ -6,6 +6,6 @@ dunst&
 sxhkd&
 picom&
 redshift -P -O 5500
-feh --bg-fill $WALL
-xinput set-prop 13 314 1
+feh --bg-fill "$WALL"
+xinput set-prop 12 314 1
 dwmblocks&

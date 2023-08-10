@@ -19,7 +19,7 @@ set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"
 set drawbox
-set icons
+set icons 
 set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 set info size
@@ -31,6 +31,7 @@ cmd open-choose $OPENER_CHOOSE="true" $OPENER $fx
 # dedicated keys for file opener actions
 map o open
 map O open-choose
+#map x delete
 
 # leave some space at the top and the bottom of the screen
 set scrolloff 10

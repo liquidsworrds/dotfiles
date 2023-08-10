@@ -3,10 +3,10 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 vim.opt.showtabline = 2
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -27,6 +27,49 @@ vim.opt.scrolloff = 8
 --vim.opt.colorcolumn = "90"
 
 vim.g.mapleader = " "
-vim.g.airline_theme='base16_black_metal_burzum'
+
+-- air-line
+vim.g.airline_powerline_fonts = "1"
+vim.g.airline_theme='zenburn'
+
+-- unicode symbols
+vim.g.airline_left_sep = "»"
+vim.g.airline_left_sep = '▶'
+vim.g.airline_right_sep = '«'
+vim.g.airline_right_sep = '◀'
+
+vim.cmd[[  
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+  autocmd BufNew,BufRead *.asm set ft=nasm
+  
+]]
+
+vim.cmd("set mouse=")
+vim.cmd [[colorscheme kanagawa]]
+
+
+--vim.g.airline_symbols.linenr = '␊'
+--vim.g.airline_symbols.linenr = '␤'
+--vim.g.airline_symbols.linenr = '¶'
+--vim.g.airline_symbols.branch = '⎇'
+--vim.g.airline_symbols.paste = 'ρ'
+--vim.g.airline_symbols.paste = 'Þ'
+--vim.g.airline_symbols.paste = '∥'
+--vim.g.airline_symbols.whitespace = 'Ξ'
+
+-- airline symbols
+vim.g.airline_left_sep = ''
+vim.g.airline_left_alt_sep = ''
+vim.g.airline_right_sep = ''
+vim.g.airline_right_alt_sep = ''
+--vim.g.airline_symbols.branch = ''
+--vim.g.airline_symbols.readonly = ''
+--vim.g.airline_symbols.linenr = ''
 
 vim.lsp.buf.hover()
+vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='gray' })
+vim.api.nvim_set_hl(0, 'LineNr', { fg='gold' })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='gray' })
