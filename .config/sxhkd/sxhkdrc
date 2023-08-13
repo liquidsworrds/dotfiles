@@ -35,20 +35,28 @@ super + Print
 super + shift + F1
 	st -e pulsemixer
 
-super + F3
-	pamixer default-sink -i 5
+super + F1
+	pamixer default-sink -t
 
 super + F2
 	pamixer default-sink -d 5
 
-super + F1
-	pamixer default-sink -t
+super + F3
+	pamixer default-sink -i 5
 
-super + F8
-	wifi toggle >/dev/null
+super + F5
+    sudo xbacklight -dec 5
 
 super + F6
     sudo xbacklight -inc 5
 
-super + F5
-    sudo xbacklight -dec 5
+super + F7
+    mirr_scr
+
+super + F8
+	wifi toggle && notify-send "$(wifi)"
+
+super + F10 
+  bluetooth toggle && notify-send "$(bluetooth)"
+
+
