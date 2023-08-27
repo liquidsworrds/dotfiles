@@ -10,17 +10,23 @@ super + w
 super + d 
 	dmenu_run
 
-super + shift + p
-	st -e cmus
+super + e 
+  st -e neomutt
 
 super + p
 	spotify
 
+super + shift + p
+	st -e cmus
+
 super + s 
-    signal-desktop&
+    signal-desktop
 
 super + r
 	st -e /usr/bin/lfrun
+
+super + shift + t
+  st -e htop
 
 super + ctrl + x 
 	dwm-prompt "Are you sure you want to shutdown?" "shutdown now"
@@ -30,7 +36,7 @@ super + ctrl + r
 
 super + Print
     flameshot gui
-	;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
+	  ;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
 
 super + shift + F1
 	st -e pulsemixer
@@ -58,5 +64,3 @@ super + F8
 
 super + F10 
   bluetooth toggle && notify-send "$(bluetooth)"
-
-

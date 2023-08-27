@@ -1,0 +1,6 @@
+#!/bin/sh
+
+tmp=$1
+tmp=$(echo $1 | sed 's/\//\\\//g')
+
+dwm-prompt "Change wallpaper?" "sed -Ei "s/^WALL.*/WALL=\'$tmp\'/" $HOME/.zshenv"

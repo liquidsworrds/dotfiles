@@ -1,8 +1,0 @@
-#!/bin/sh
-
-wallpaper=$(find $HOME -name $1.jpg 2>/dev/null)
-feh --bg-fill $wallpaper 
-wal -i $wallpaper >/dev/null
-sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
-cd /opt/dwm/ && sudo make clean install >/dev/null
-echo "Done..."

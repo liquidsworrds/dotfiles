@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+
 -- use({
 --     'rose-pine/neovim',
 --     as = 'rose-pine',
@@ -51,10 +52,13 @@ return require('packer').startup(function(use)
           require('neorg').setup {
               load = {
                   ["core.defaults"] = {}, -- Loads default behaviour
+                  ["core.autocommands"] = {},
+                  ["core.integrations.treesitter"] = {},
                   ["core.concealer"] = {
                     config = {
-                      icon_preset = "diamond"
-                    }
+                      icon_preset = "diamond",
+                      folds = false,
+                    },
                   }, -- Adds pretty icons to your documents
                   ["core.dirman"] = { -- Manages Neorg workspaces
                       config = {
@@ -88,8 +92,5 @@ return require('packer').startup(function(use)
  --       vim.cmd('colorscheme gruvbox')
  --       end
  -- })
-
   use {'rebelot/kanagawa.nvim'}
-
-
 end)
