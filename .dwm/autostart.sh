@@ -8,5 +8,5 @@ sxhkd&
 picom&
 redshift -P -O 5500
 feh --bg-fill "$WALL"
-xinput set-prop $id 314 1
+xinput set-prop "$id" "libinput Tapping Enabled" 1
 dwmblocks&
