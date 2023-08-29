@@ -9,4 +9,3 @@ charge=$(cat /sys/class/power_supply/BAT0/capacity)
 if [ "$charge" -le 15 ]; then
   notify-send -u critical "Low Battery!";
 fi
-sleep 1m;

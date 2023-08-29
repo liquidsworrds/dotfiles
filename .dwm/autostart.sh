@@ -6,7 +6,7 @@ nm-applet&
 dunst&
 sxhkd&
 picom&
+dwmblocks&
 redshift -P -O 5500
 feh --bg-fill "$WALL"
 xinput set-prop "$id" "libinput Tapping Enabled" 1
-dwmblocks&
