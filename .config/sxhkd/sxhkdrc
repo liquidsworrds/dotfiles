@@ -2,7 +2,7 @@ super + Escape
 	"$XDG_CONFIG_HOME"/sxhkd/functions
 
 super + Return
-	alacritty
+	st
 
 super + w
 	librewolf
@@ -17,13 +17,13 @@ super + p
 	spotify
 
 super + shift + p
-	st -e cmus
+  st -e cmus
 
 super + s 
-    signal-desktop
+  signal-desktop
 
 super + r
-	st -e /usr/bin/lfrun
+  st -e /usr/bin/lfrun
 
 super + shift + t
   st -e htop
@@ -35,11 +35,11 @@ super + ctrl + r
 	dwm-prompt "Are you sure you want to reboot?" "reboot"
 
 super + Print
-    flameshot gui
-	  ;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
+  flameshot gui
+	;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
 
 super + shift + F1
-	st -e pulsemixer
+  st -e pulsemixer
 
 super + shift + F7 
   picom-trans -tc
@@ -54,17 +54,16 @@ super + F3
 	pamixer default-sink -i 5
 
 super + F5
-    sudo xbacklight -dec 5
+  sudo xbacklight -dec 5
 
 super + F6
-    sudo xbacklight -inc 5
+  sudo xbacklight -inc 5
 
 super + F7
-    mirr_scr
+  mirr_scr
 
 super + F8
 	wifi toggle && notify-send "$(wifi)"
 
 super + F10 
   bluetooth toggle && notify-send "$(bluetooth)"
-
