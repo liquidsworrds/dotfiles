@@ -41,6 +41,9 @@ super + Print
 super + shift + F1
 	st -e pulsemixer
 
+super + shift + F7 
+  picom-trans -tc
+
 super + F1
 	pamixer default-sink -t
 
@@ -64,3 +67,4 @@ super + F8
 
 super + F10 
   bluetooth toggle && notify-send "$(bluetooth)"
+
