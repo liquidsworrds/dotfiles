@@ -3,11 +3,12 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.showtabline = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.opt.showtabline = 1
 
 vim.opt.smartindent = true
 
@@ -25,6 +26,10 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 --vim.opt.colorcolumn = "90"
+
+vim.opt.updatetime = 50
+
+vim.opt.completeopt = 'menuone,noselect'
 
 vim.g.mapleader = " "
 
@@ -51,16 +56,6 @@ vim.cmd[[
 vim.cmd("set mouse=")
 vim.cmd [[colorscheme kanagawa-dragon]]
 
-
---vim.g.airline_symbols.linenr = '␊'
---vim.g.airline_symbols.linenr = '␤'
---vim.g.airline_symbols.linenr = '¶'
---vim.g.airline_symbols.branch = '⎇'
---vim.g.airline_symbols.paste = 'ρ'
---vim.g.airline_symbols.paste = 'Þ'
---vim.g.airline_symbols.paste = '∥'
---vim.g.airline_symbols.whitespace = 'Ξ'
-
 -- airline symbols
 vim.g.airline_left_sep = ''
 vim.g.airline_left_alt_sep = ''
@@ -74,7 +69,6 @@ vim.lsp.buf.hover()
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='gray' })
 vim.api.nvim_set_hl(0, 'LineNr', { fg='gold' })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='gray' })
-
 
 -- Autocmds
 vim.cmd([[
