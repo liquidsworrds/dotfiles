@@ -89,7 +89,6 @@ vim.cmd([[
 local attach_to_buffer = function(bufnr, pattern, command)
   vim.api.nvim_create_autocmd("BufWritePost",  {
     group = vim.api.nvim_create_augroup("AutoSave", { clear = true }),
-    pattern = "main.py",
     callback = function()
       local append_data = function(_, data)
           if data then
