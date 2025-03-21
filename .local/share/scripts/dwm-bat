@@ -4,8 +4,8 @@ bat=$(acpi | grep -o "[[:digit:]]*%")
 chr=$(acpi | grep -o "Charging")
 charge=$(cat /sys/class/power_supply/BAT0/capacity)
 
-[ "$chr" == "Charging" ] && echo "  $bat" || echo "   $bat"
+[ "$chr" == "Charging" ] && echo "  $bat" || echo "  $bat"
 
-if [ "$charge" -le 15 ]; then
-  notify-send -u critical "Low Battery!";
+if [ "$charge" -le 20 ]; then
+  notify-send -i battery-caution-symbolic -u critical "Low Battery" "20% battery remaining.";
 fi

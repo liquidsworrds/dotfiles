@@ -1,3 +1,3 @@
 #!/bin/sh
 
-printf "$(sensors | grep "CPU" | awk '{print $2}' | tr -d "+")"
+printf " $(sensors | grep "CPU" | awk '{print $2}' | tr -d "+")"

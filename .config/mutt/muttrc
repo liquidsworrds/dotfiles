@@ -72,7 +72,7 @@ color sidebar_divider    color8  default     # Dark grey
 #set crypt_use_gpgme = yes
 
 # Automatically sign all out-going email
-set crypt_autosign = yes
+set crypt_autosign = no
 
 # Sign replies to signed emails
 set crypt_replysign = yes

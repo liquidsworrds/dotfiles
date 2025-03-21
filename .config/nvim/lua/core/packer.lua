@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
             {'williamboman/mason.nvim'},
             {'neovim/nvim-lspconfig'},
             {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'saadparwaiz1/cmp_luasnip'},
             {'L3MON4D3/LuaSnip'},
@@ -80,13 +81,35 @@ return require('packer').startup(function(use)
       end
     }
 
+    use{
+        'iamcco/markdown-preview.nvim',
+        run = function()
+          vim.fn["mkdp#util#install"]()
+        end,
+    }
+
+    use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+          require("nvim-autopairs").setup {}
+      end
+    }
+
+    use({
+      "aurum77/live-server.nvim",
+      run = function()
+        require"live_server.util".install()
+      end,
+      cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+    })
+
     use{'catppuccin/nvim'}
+    use{'nvim-tree/nvim-tree.lua'}
+    use{'nvim-tree/nvim-web-devicons'}
     use{'mbbill/undotree'}
     use{'lervag/vimtex'}
-    -- use{'ryanoasis/vim-devicons'}
     use{'vim-airline/vim-airline'}
     use{'vim-airline/vim-airline-themes'}
     use{'christoomey/vim-tmux-navigator'}
-    use{'nvim-tree/nvim-tree.lua'}
-    use{'nvim-tree/nvim-web-devicons'}
 end)

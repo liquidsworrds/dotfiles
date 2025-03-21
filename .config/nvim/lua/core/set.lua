@@ -30,7 +30,7 @@ vim.opt.termguicolors = true
 -- vim.g.loaded_netrwPlugin = 1
 
 vim.opt.scrolloff = 8
---vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 vim.opt.confirm = true
 
 vim.opt.updatetime = 50
@@ -69,7 +69,7 @@ vim.cmd[[
 
 ]]
 
-vim.cmd 'set mouse='
+vim.cmd 'set mouse=a'
 vim.cmd 'colorscheme catppuccin'
 
 -- airline symbols
@@ -95,7 +95,6 @@ vim.cmd([[
     autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
   autocmd BufWritePost *.rmd :!Rscript -e "rmarkdown::render('%')"
-  autocmd BufEnter *.tex TSDisable highlight
 
   augroup toggle_relative_number
     autocmd InsertEnter * :setlocal norelativenumber
@@ -108,6 +107,7 @@ vim.cmd([[
     autocmd BufWritePre * :%s/\s\+$//e
 ]])
 
+-- autocmd BufEnter *.tex TSDisable highlight
 
 -- Autorun
 local attach_to_buffer = function(bufnr, pattern, command)

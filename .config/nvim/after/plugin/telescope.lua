@@ -10,10 +10,10 @@ require('telescope').setup {
   pickers = {
     find_files = {
       -- theme = "dropdown",
-      prompt_prefix = "🔍 ",
+      prompt_prefix = "🔎 ",
     },
     oldfiles = {
-      prompt_prefix = "🔍 ",
+      prompt_prefix = "🔎 ",
     },
   },
 }

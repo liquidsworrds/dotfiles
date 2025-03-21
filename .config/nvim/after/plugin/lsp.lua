@@ -7,6 +7,7 @@ local lspconfig = require('lspconfig')
 
 lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
+
 end)
 
 lsp_zero.set_sign_icons({
@@ -22,6 +23,14 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- vim.diagnostic.config({
+--   virtual_text = false
+-- })
+
+-- -- Show line diagnostics automatically in hover window
+-- vim.o.updatetime = 250
+-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -39,6 +48,8 @@ cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
     {name = 'luasnip'},
+    {name = 'buffer'},
+    {name = 'vimtex'},
   },
   snippet = {
     expand = function(args)
@@ -47,7 +58,11 @@ cmp.setup({
   },
   window = {
     completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    documentation = {
+      cmp.config.window.bordered(),
+      max_height = 15,
+      max_width = 60,
+    }
   },
   mapping = {
     ['<Tab>'] = cmp_action.luasnip_supertab({behavior='insert'}),
@@ -56,6 +71,8 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),
     ['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
     ['<Down>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     ['<C-p>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item({behavior = 'insert'})

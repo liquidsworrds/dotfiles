@@ -1,69 +1,88 @@
 super + Escape
-	"$XDG_CONFIG_HOME"/sxhkd/functions
+    "$XDG_CONFIG_HOME"/sxhkd/functions
 
 super + Return
-	st
+    st
 
 super + w
-	librewolf
+    librewolf
 
-super + d 
-	dmenu_run
+super + shift + w
+    firefox
 
-super + e 
-  st -e neomutt
+super + d
+    dmenu_run
+
+super + e
+    st -e neomutt
 
 super + p
-	spotify
+    spotify
 
 super + shift + p
-  st -e cmus
+    st -e cmus
 
-super + s 
-  signal-desktop
+super + s
+    signal-desktop
 
 super + r
-  st -e /usr/bin/lfrun
+    st -e /usr/bin/lfrun
 
 super + shift + t
-  st -e htop
+    st -e htop
 
-super + ctrl + x 
-	dwm-prompt "Are you sure you want to shutdown?" "shutdown now"
+super + ctrl + x
+    dwm-prompt "Are you sure you want to shutdown?" "shutdown now"
 
-super + ctrl + r 
-	dwm-prompt "Are you sure you want to reboot?" "reboot"
+super + ctrl + r
+    dwm-prompt "Are you sure you want to reboot?" "reboot"
+
+super + ctrl + l
+    slock
 
 super + Print
-  flameshot gui
-	;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
+    flameshot gui
+    ;scrot '%Y-%m-%d_%R_$wx$h.png' -e 'mv $f ~/pics/ss/;sxiv ~/pics/ss/$f'
 
 super + shift + F1
-  st -e pulsemixer
+    st -e pulsemixer
 
-super + shift + F7 
-  picom-trans -tc
+super + shift + F5
+    redshift -P -O 6500
+
+super + shift + F6
+    redshift -P -O 5500
+
+super + shift + F7
+    picom-trans -tc
 
 super + F1
-	pamixer default-sink -t
+    pamixer default-sink -t
 
 super + F2
-	pamixer default-sink -d 5
+    pamixer default-sink -d 5
 
 super + F3
-	pamixer default-sink -i 5
+    pamixer default-sink -i 5
+
+super + F4
+    pamixer --source 50 -t
 
 super + F5
-  sudo xbacklight -dec 5
+    sudo xbacklight -dec 5
 
 super + F6
-  sudo xbacklight -inc 5
+    sudo xbacklight -inc 5
 
 super + F7
-  mirr_scr
+    mirr_scr
 
 super + F8
-	wifi toggle && notify-send "$(wifi)"
+    wifi-toggle
 
-super + F10 
-  bluetooth toggle && notify-send "$(bluetooth)"
+super + F10
+    dwm-bluetooth
+
+super + shift + F10
+    bluetooth toggle && notify-send "$(bluetooth)" > /dev/null
+

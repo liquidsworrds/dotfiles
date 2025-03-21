@@ -19,7 +19,7 @@ set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"
 set drawbox
-set icons 
+set icons
 set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 set info size
@@ -33,7 +33,23 @@ map o open
 map O open-choose
 map D delete
 map W wall
+map <c-f> push :fzf<space>
+map f :fzf_jump
 
+cmd fzf $vim $(find . -name "$1" | fzf)
+
+cmd fzf_jump ${{
+    res="$(find . | fzf --reverse --header='Jump to location')"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
@@ -74,13 +90,13 @@ cmd open &{{
 cmd trash %set -f; mv $fx ~/.trash
 
 # define a custom 'delete' command
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ "$ans" = "y" ] && rm -rf $fx
-# }}
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
+}}
 
 # use '<delete>' key for either 'trash' or 'delete' command
 # map <delete> trash

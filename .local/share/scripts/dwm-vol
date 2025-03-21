@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 vol=$(pamixer default-sink --get-volume)
 vol_mute=$(pamixer default-sink --get-mute)
 
 if [ "$vol_mute" == "true" ]; then
-	echo " muted"
+	echo "󰖁 "
 else
-	echo "  $vol%" 
+	echo "󰕾 $vol%"
 fi
